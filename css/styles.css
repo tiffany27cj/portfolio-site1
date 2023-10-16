@@ -1,27 +1,21 @@
-/*
-Colors used
-
-Text Color (Dark Gray): #2b2b2b;
-Primary Color (Purple): #2D1C24;
-Secondary Color (Pink): #543141;
-Secondary Color : #763353
-More colors : 5F404F
-More colors : 8E5972
-
- */
-
  :root {
-    --primary-color: 5F404F;
-    --secondary-color: 8E5972;
+    --primary-color: #77975E;
+    --secondary-color: #445934;
+    --third-color: #557E36;
     --dark-grey: #2b2b2b;
+    --link-text: #252F1D;
+    --active-link: #526544;
+    --font-weight: 400;
+    --font-size: 16px;
+    --line-height: 1.6;
   }
 
  body {
-    /* background-color: #763353;*/
+    background-color: var(--primary-color);
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
   }
 
   h1 {
@@ -40,14 +34,18 @@ More colors : 8E5972
     font-weight: 700;
   }
   
+  span.profession {
+    font-weight:bold;
+  }
+
   a {
-    color: var(--primary-color);
+    color: var(--link-text);
     transition-duration: 0.2s;
     transition-property: opacity;
   }
   
   a:visited {
-    color: #05676e;
+    color: var(--dark-grey);
   }
   
   a:hover, a:focus {
@@ -55,18 +53,37 @@ More colors : 8E5972
   }
 
   a:active {
-    color: #489c79;
+    color: var(--active-link);
   }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 10px solid var(--secondary-color);
+  }
+  
+  
+  th, td {
+    padding: 20px;
+  }
+
+    tbody tr:nth-child(odd) {
+      background-color: var(--secondary-color);
+    }
     
+    tbody tr:nth-child(even) {
+      background-color: var(--third-color);
+    }
       
-      .button, button {
+    .button, button {
         /* overwrites browser defaults and resets the border */
         border: none;
         display: inline-block;
         /* takes the font from the outer container */
         font-family: inherit;
         /* styles the button */
-        background-color: #357b70;
+        background-color: var(--third-color);
         color: white;
         text-decoration: none;
         padding: 10px;
@@ -85,7 +102,7 @@ More colors : 8E5972
       }
 
       .button__secondary {
-        background-color: #543141;
+        background-color: var(--dark-grey);
         color: white;
       }
 
@@ -154,7 +171,7 @@ More colors : 8E5972
       }
 
       .grid__item {
-        background-color: lightgreen;
+        background-color: var(--third-color);
       }
 
       @media all and (max-width: 500px) {
@@ -167,7 +184,7 @@ More colors : 8E5972
         grid-row: auto / auto;
       }
       h1 {
-        font-size: 16px;
+        font-size: 30px;
       }
      
       @media all and (min-width: 500px) and (max-width: 750px){
